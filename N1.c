@@ -3,7 +3,7 @@
 
 void umGrau()
 {
-    int a, b;
+    int a, b;                               
     float result;
     printf("\n=== Resolucao passo-a-passo: Equacao de Primeiro Grau ===\n");
 
@@ -53,7 +53,7 @@ void segGrau()
     printf("=> Delta = %d - %d = %d\n", b*b, 4*a*c, delta);
     if (delta < 0)
     {
-        printf("\nDelta não pertence aos reais, não tem como progredir\n");
+        printf("\nDelta não pertence aos reais ou é 0\n");
     }
     else
     {
@@ -61,11 +61,11 @@ void segGrau()
 
         raiz = sqrt((float)delta);
         printf("- sqrt(Delta) = %.0lf\n", raiz);
-        printf("- Denominador 2a = 2 * (%.0lf) = %d\n\n", a, 2.0*a);
+        printf("- Denominador 2a = 2 * (%d) = %0.lf\n\n", a, 2.0*a);
 
         printf("3) Calculo x1:\n");
 
-        printf("x1 = (-%d + sqrt(%.0lf)) / (2*%d)\n", b, delta, a);
+        printf("x1 = (-%d + sqrt(%d)) / (2*%d)\n", b, delta, a);
         printf("= (%d + %.0lf / %.0lf)\n", -b, raiz, 2.0*a);
         x1 = (-b + raiz) / (2.0 * a);
         printf("= %.0lf / %.0lf = %.0lf\n\n", -b+raiz, 2.0*a, x1);
@@ -110,7 +110,7 @@ int main()
         case 3:
             sobre();
             break;
-        case 4:
+        case 0:
             printf("\nAdeus!\n");
             return 1;
         }
